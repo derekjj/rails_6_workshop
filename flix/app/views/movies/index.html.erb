@@ -3,6 +3,10 @@
   <%# <li>Iron Man</li>
   <li>Superman</li>
   <li>Spider-Man</li> %>
-  <li><%= movie %></li>
+  <li>
+    <%= movie.title %>
+    <%= movie.rating %>
+    <%= number_to_currency(movie.total_gross, precision: 0) %>
+  </li>
 <% end %>
 </ul>
