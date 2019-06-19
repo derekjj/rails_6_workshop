@@ -1,7 +1,9 @@
 class MoviesController < ApplicationController
   def index
     # @movies = ["Iron Man", "Superman", "Spider-Man", "Batman"]
-    @movies = Movie.all
+    # @movies = Movie.all
+    # @movies = Movie.upcoming
+    @movies = Movie.released
   end
 
   def show
