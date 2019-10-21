@@ -5,7 +5,7 @@
   <div class="details">
     <h1><%= @event.name %></h1>
     <h2>
-      <%= pluralize(@event.capacity, "spot") %> &bull; <%= price(@event) %> 
+      <%= pluralize(@event.capacity, "spot") %> &bull; <%= price(@event) %>
     </h2>
     <h3>
       <%= day_and_time(@event) %> in <%= @event.location %>
@@ -13,7 +13,6 @@
     <p>
       <%= @event.description %>
     </p>
-
     <div class="register">
       <%= register_or_sold_out(@event) %>
       <p>
@@ -22,14 +21,15 @@
     </div>
   </div>
 </section>
-
-<section class="admin">
-  <%= link_to "Edit",
+<% if current_user_admin? %>
+  <section class="admin">
+    <%= link_to "Edit",
               edit_event_path(@event),
               class: "button" %>
-  <%= link_to "Delete",
+    <%= link_to "Delete",
               @event,
               class: "button",
               method: :delete,
               data: {confirm: "Really?!" } %>
-</section>
+  </section>
+<% end %>
