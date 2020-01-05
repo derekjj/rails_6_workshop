@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+
   before_action :require_signin, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
 
@@ -23,28 +24,38 @@ class EventsController < ApplicationController
     end
   end
 
-   def new
+  def new
     @event = Event.new
-   end
+  end
 
-   def create
+  def create
     @event = Event.new(event_params)
     if @event.save
       redirect_to @event, notice: "Event successfully created!"
     else
       render :new
     end
-   end
+  end
 
-   def destroy
+  def destroy
     @event = Event.find(params[:id])
     @event.destroy
     redirect_to events_url
-   end
+  end
 
-   private
-   def event_params
-      params.require(:event).
-        permit(:name, :description, :location, :price, :starts_at, :capacity, :image_file_name )
-   end
+private
+
+  def event_params
+    params.require(:event).
+      permit(:name, :description, :location, :price, :starts_at,
+             :capacity, :image_file_name)
+  end
 end
+
+
+
+
+
+
+
+

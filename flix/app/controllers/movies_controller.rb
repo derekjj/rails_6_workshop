@@ -1,17 +1,15 @@
 class MoviesController < ApplicationController
   before_action :require_signin, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
+
   def index
-    # @movies = ["Iron Man", "Superman", "Spider-Man", "Batman"]
-    # @movies = Movie.all
-    # @movies = Movie.upcoming
     @movies = Movie.released
   end
 
   def show
     @movie = Movie.find(params[:id])
   end
-  
+
   def edit
     @movie = Movie.find(params[:id])
   end
@@ -19,7 +17,7 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     if @movie.update(movie_params)
-      redirect_to @movie, notice: "Movie Updated!"
+      redirect_to @movie, notice: "Movie successfully updated!"
     else
       render :edit
     end
@@ -27,12 +25,12 @@ class MoviesController < ApplicationController
 
   def new
     @movie = Movie.new
-   end
+  end
 
-  def create  
+  def create
     @movie = Movie.new(movie_params)
     if @movie.save
-      redirect_to @movie, notice: "Movie Created!"
+      redirect_to @movie, notice: "Movie successfully created!"
     else
       render :new
     end
@@ -41,14 +39,14 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
-    redirect_to movies_url, danger: "I'm sorry, Dave, I'm afraid I can't do that!"
+    redirect_to movies_url, alert: "Movie successfully deleted!"
   end
 
+private
 
-  private
   def movie_params
     params.require(:movie).
       permit(:title, :description, :rating, :released_on, :total_gross,
-            :director, :duration, :image_file_name)
+             :director, :duration, :image_file_name)
   end
 end

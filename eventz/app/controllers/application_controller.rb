@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  private
+
+private
 
   def current_user
     User.find(session[:user_id]) if session[:user_id]
@@ -22,7 +23,7 @@ class ApplicationController < ActionController::Base
   def require_signin
     unless current_user
       session[:intended_url] = request.url
-      redirect_to new_session_url, alert: "Please sign in first"
+      redirect_to new_session_url, alert: "Please sign in first!"
     end
   end
 
@@ -31,4 +32,11 @@ class ApplicationController < ActionController::Base
       redirect_to events_url, alert: "Unauthorized access!"
     end
   end
+
+
+
+
+
+
+
 end

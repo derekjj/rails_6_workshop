@@ -62,7 +62,7 @@ header {
 		a.button {
 			@extend .btn, .btn-outline-secondary;
     }
-    
+
     ul {
       @extend .nav, .navbar-nav;
 			letter-spacing: 1px;
@@ -84,8 +84,8 @@ header {
 				 @extend .nav-link;
 				 padding-bottom: 1px;
 				}
-				
-				a:hover:not(.button), 
+
+				a:hover:not(.button),
 				a.active {
 					color: $off-white;
 					border-bottom: 1px solid $off-white;
@@ -156,7 +156,7 @@ section.movie {
 
 section.movie-details {
 	@extend .row;
-	
+
 	.image {
 		@extend .col-md-3, .text-left;
 
@@ -166,7 +166,7 @@ section.movie-details {
 	}
 
 	.details {
-		@extend .col-md-7, .text-left;	
+		@extend .col-md-7, .text-left;
 	}
 
 	aside {
@@ -203,7 +203,7 @@ section.movie-details {
 		@extend .input-group;
 		margin-top: 1rem;
 
-		.button {
+		form {
 			@extend .input-group-prepend;
 		}
 
@@ -213,8 +213,7 @@ section.movie-details {
 			border-bottom-left-radius: 0;
 		}
 
-		input[type="submit"].fave,
-		input[type="submit"].unfave {
+		input[type="submit"] {
 			@extend .btn, .btn-outline-secondary;
 			border-color: #cdd3d8;
 			border-right: none;
@@ -228,7 +227,7 @@ section.movie-details {
 		margin-top: 1rem;
     font-size: 1.15em;
 	}
-	
+
 	img {
 		margin-top: 0.5rem;
 		width: 150px;
@@ -243,7 +242,7 @@ section.movie-details {
 	}
 
 	.reviews {
-		.star-ratings {
+		.star-rating {
 			margin-bottom: 0.5rem;
 		}
 	}
@@ -274,7 +273,7 @@ section.user {
 		font-size: 1.5rem;
 		margin-bottom: 2rem;
 	}
-	
+
 	.actions {
 		margin-top: 1rem;
 
@@ -288,7 +287,7 @@ section.user {
 			&.delete {
 				@extend .btn-danger;
 			}
-		}	
+		}
 	}
 
 	.review {
@@ -343,7 +342,7 @@ ul.reviews {
 
   li {
 		margin: 1em 0 2.5rem 0;
-		
+
 		span {
       &.date {
         font-size: .8em;
@@ -356,7 +355,7 @@ ul.reviews {
 		.button {
 			@extend .btn, .btn-sm, .btn-outline-danger;
 			margin-left: 0.5rem;
-		}	
+		}
   }
 }
 
@@ -389,7 +388,12 @@ section.admin {
 		letter-spacing: 1px;
 		text-transform: uppercase;
 	}
-}	
+}
+
+section.movie + section.admin {
+  border-top: none;
+	padding-top: 0;
+}
 
 // Aside
 
@@ -402,7 +406,7 @@ aside {
 		text-transform: uppercase;
     border-bottom: 1px solid $border-color;
 	}
-	
+
 	ul {
 		list-style: none;
 		padding-left: 0.25rem;
@@ -425,8 +429,8 @@ form:not([class="button_to"]) {
 		display: block;
   }
 
-	input:not([type="checkbox"]), 
-	textarea, 
+	input:not([type="checkbox"]),
+	textarea,
 	select:not(.date) {
 		@extend .form-control;
 		margin-bottom: 0.75rem;
@@ -434,10 +438,10 @@ form:not([class="button_to"]) {
 	}
 
 	select.date {
-		display: inline-block; 
+		display: inline-block;
 		margin-bottom: 0.75rem;
 	}
-	
+
 	input[type="submit"] {
 		@extend .btn, .btn-primary, .btn-block;
 		margin-top: 1.5rem;
@@ -466,7 +470,7 @@ form:not([class="button_to"]) {
 		margin-bottom: 0.6rem;
 		font-weight: 400;
 	}
-	
+
 	.star {
 		@extend .form-check, .form-check-inline;
 	}
@@ -501,10 +505,6 @@ form:not([class="button_to"]) {
 
   &.alert {
 		@extend .alert-danger;
-  }
-  
-  &.danger {
-    background-color: #FFA715;
   }
 }
 

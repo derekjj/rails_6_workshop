@@ -10,8 +10,8 @@ class Registration < ApplicationRecord
     'Friend/Coworker',
     'Other'
   ]
-  
+
   validates :how_heard,
             inclusion: { in: HOW_HEARD_OPTIONS }
-            
+
 end

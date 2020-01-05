@@ -16,18 +16,24 @@ class RegistrationsController < ApplicationController
 
     if @registration.save
       redirect_to event_registrations_url(@event),
-          notice: "Thanks for registering!"
+        notice: "Thanks for registering!"
     else
       render :new
     end
   end
 
-  private
-    def registration_params
-        params.require(:registration).permit(:how_heard)
-    end
+private
 
-    def set_event
-      @event = Event.find(params[:event_id])
-    end
+  def registration_params
+    params.require(:registration).permit(:how_heard)
+  end
+
+  def set_event
+    @event = Event.find(params[:event_id])
+  end
+
 end
+
+
+
+

@@ -83,8 +83,8 @@ header {
 				 @extend .nav-link;
 				 padding-bottom: 1px;
 				}
-				
-				a:hover:not(.button), 
+
+				a:hover:not(.button),
 				a.active {
 					color: $off-white;
 					border-bottom: 1px solid $off-white;
@@ -104,7 +104,7 @@ header {
       }
     }
 	}
-	
+
 	h1 {
 		margin-left: 1rem;
 		color: $light-blue;
@@ -153,7 +153,7 @@ section.event {
 
 	span.price {
 		background: $accent-color;
-		letter-spacing: 1px;			
+		letter-spacing: 1px;
 		color: $off-white;
 		padding: 5px;
 		font-size: 0.85rem;
@@ -169,7 +169,7 @@ section.event {
 
 section.event-details {
 	@extend .row;
-	
+
 	.image {
 		@extend .col-md-3, .text-left;
 
@@ -179,7 +179,7 @@ section.event-details {
 	}
 
 	.details {
-		@extend .col-md-7, .text-left;	
+		@extend .col-md-7, .text-left;
 	}
 
 	aside {
@@ -206,7 +206,7 @@ section.event-details {
 		@extend .input-group;
 		margin-top: 1rem;
 
-		.button {
+		form {
 			@extend .input-group-prepend;
 		}
 
@@ -216,8 +216,7 @@ section.event-details {
 			border-bottom-left-radius: 0;
 		}
 
-		input[type="submit"].like,
-		input[type="submit"].unlike {
+		input[type="submit"] {
 			@extend .btn, .btn-outline-secondary;
 			border-color: #cdd3d8;
 			border-right: none;
@@ -231,7 +230,7 @@ section.event-details {
 		margin-top: 1rem;
     font-size: 1.15em;
 	}
-	
+
 	img {
 		margin-top: 0.5rem;
 		height: 75px;
@@ -249,13 +248,13 @@ section.event-details {
 			letter-spacing: 1px;
 			text-transform: uppercase;
 		}
-		
+
 		.sold-out {
 			background: $sold-out-color;
 			font-size: 1.25rem;
 			font-weight: 600;
 			text-align: center;
-			letter-spacing: 1px;			
+			letter-spacing: 1px;
 			padding: 10px;
 			font-weight: 400;
 			text-transform: uppercase;
@@ -289,7 +288,7 @@ section.user {
 		font-size: 1.5rem;
 		margin-bottom: 2rem;
 	}
-	
+
 	.actions {
 		margin-top: 1rem;
 
@@ -303,7 +302,7 @@ section.user {
 			&.delete {
 				@extend .btn-danger;
 			}
-		}	
+		}
 	}
 
 	.registration {
@@ -315,7 +314,7 @@ section.user {
 
 		.image {
 			@extend .col-md-3, .text-center;
-			
+
 			img {
 				height: 60px;
 			}
@@ -390,9 +389,9 @@ section.admin {
 		letter-spacing: 1px;
 		text-transform: uppercase;
 	}
-}	
+}
 
-section.event + section.admin { 
+section.event + section.admin {
   border-top: none;
 	padding-top: 0;
 }
@@ -408,7 +407,7 @@ aside {
 		text-transform: uppercase;
     border-bottom: 1px solid $border-color;
 	}
-	
+
 	ul {
 		list-style: none;
 		padding-left: 0.25rem;
@@ -431,8 +430,8 @@ form:not([class="button_to"]) {
 		display: block;
   }
 
-	input:not([type="checkbox"]), 
-	textarea, 
+	input:not([type="checkbox"]),
+	textarea,
 	select:not(.datetime) {
 		@extend .form-control;
 		margin-bottom: 0.75rem;
@@ -440,10 +439,10 @@ form:not([class="button_to"]) {
 	}
 
 	select.datetime {
-		display: inline-block; 
+		display: inline-block;
 		margin-bottom: 0.75rem;
 	}
-	
+
 	input[type="submit"] {
 		@extend .btn, .btn-primary, .btn-block;
 		margin-top: 1.5rem;
@@ -460,7 +459,7 @@ form:not([class="button_to"]) {
 		padding-left: 0.5rem;
 		margin-bottom: 0.5rem;
 	}
-	
+
 	.checkboxes {
 		@extend .form-check;
 		margin-top: 1.5rem;
