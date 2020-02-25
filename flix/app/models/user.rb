@@ -9,4 +9,7 @@ class User < ApplicationRecord
 
   validates :email, format: { with: /\S+@\S+/ },
                     uniqueness: { case_sensitive: false }
+                    
+  scope :by_name, -> { order(:name) }
+  scope :not_admins, -> { by_name.where(admin: false) }
 end
