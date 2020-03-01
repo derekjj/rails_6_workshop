@@ -131,7 +131,7 @@ User.create!([
   ["Drone Zone", "drone-zone.png"],
   ["Coding Ninjas", "ninjas.png"],
 ].each do |event_name, file_name|
-  e = Event.find_by(name: event_name)
-  f = File.open(Rails.root.join("app/assests/images/#{file_name}"))
-  e.main_image.attach(io: f, filename: file_name)
+  e = Event.find_by!(name: event_name)
+  file = File.open(Rails.root.join("app/assets/images/#{file_name}"))
+  e.main_image.attach(io: file, filename: file_name)
 end
